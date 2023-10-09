@@ -1,0 +1,51 @@
+<%= render 'shared/header' %>
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <h3>Create Loan for <%= @entity.name %></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <%= form_with model: [ @entity, @entity.loans.build ] do |form| %>
+        <p>
+          <%= form.label :name %><br>
+          <%= form.text_field :name, placeholder: "Loan Name" %>
+        </p>
+        <p>
+          <%= form.label :commentary %><br>
+          <%= form.text_area :commentary, placeholder: "Description" %>
+        </p>
+
+        <p>
+          <%= form.label :principal %><br>
+          <%= form.number_field :principal, placeholder: "Principal Amount" %>
+        </p>
+
+        <p>
+          <%= form.label :interest %><br>
+          <%= form.number_field :interest, placeholder: "Interest (annual)" %>
+        </p>
+
+        <p>
+          <%= form.label :loan_term_in_months %><br>
+          <%= form.number_field :loan_term_in_months, placeholder: "Loan term in months" %>
+        </p>
+
+        <p>
+          <%= form.label :payment_frequency%><br>
+          <%= form.select :payment_frequency, ["Annually", "Semi-Annually", "Quarterly", "Monthly"]%>
+        </p>
+
+        <p>
+          <%= form.label :start_date %><br>
+          <%= form.date_field :start_date %>
+        </p>
+
+        <p>
+          <%= form.submit class: "btn btn-primary" %>
+        </p>
+      <% end %>
+    <div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10">
+      <h3><%= @loan.name %></h3>
+      <div class="col col-2">
+        <a href="../../<%= @entity.id %>">
+          <button class="btn btn-secondary">Back to Entity</button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col col-12 detail-tile">
+      <p><strong>Principal: </strong><%= @loan.principal %></p>
+      <p><strong>Interest: </strong><%= @loan.interest %></p>
+      <p><strong>Loan Term(months): </strong><%= @loan.loan_term_in_months %></p>
+      <p><strong>Payment Frequency: </strong><%= @loan.payment_frequency %></p>
+      <p><strong>Start Date: </strong><%= @loan.start_date %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <h3>Amortization Schedule</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Date</th>
+            <th>Payment</th>
+            <th>Principal Paid</th>
+            <th>Interest Paid</th>
+            <th>Remaining Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @amortization_schedule.schedule.each do |row| %>
+            <tr>
+              <td><%= row[:period] %></td>
+              <td><%= row[:date] %></td>
+              <td><%= row[:payment] %></td>
+              <td><%= row[:principal_payment] %></td>
+              <td><%= row[:interest_payment] %></td>
+              <td><%= row[:remaining_balance] %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

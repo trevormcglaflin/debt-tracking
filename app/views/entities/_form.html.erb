@@ -1,0 +1,29 @@
+<%= form_with model: entity do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name, placeholder: "Name" %>
+    <% entity.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, placeholder: "Contact Email" %>
+    <% entity.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :naics_code %><br>
+    <%= form.text_field :naics_code, placeholder: "6 Digit Naics Code" %>
+    <% entity.errors.full_messages_for(:naics_code).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

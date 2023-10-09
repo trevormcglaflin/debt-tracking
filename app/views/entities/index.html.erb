@@ -1,0 +1,43 @@
+<%= render 'shared/header' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-10"><h3>Entities</h3></div>
+    <div class="col col-2">
+      <a href="/entities/new">
+        <button class="btn btn-primary">Create New</button>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Naics Code</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @entities.each do |entity| %>
+            <tr>
+              <td><%= entity.name %></td>
+              <td><%= entity.naics_code %></td>
+              <td><%= entity.email %></td>
+              <td>
+                <%= link_to "Show", entity_path(entity), class: "btn btn-secondary" %>
+                <%= link_to "Destroy", entity_path(entity), class: "btn btn-danger", data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                } %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

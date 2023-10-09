@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  commentary: MyString
+  principal: 1
+  interest: 1.5
+  loan_term_in_months: 1
+  payment_frequency: MyString
+  start_date: 2023-10-08 18:00:51
+  payments_at_end_of_period: false
+  entity: one
+
+two:
+  name: MyString
+  commentary: MyString
+  principal: 1
+  interest: 1.5
+  loan_term_in_months: 1
+  payment_frequency: MyString
+  start_date: 2023-10-08 18:00:51
+  payments_at_end_of_period: false
+  entity: two
