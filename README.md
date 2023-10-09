@@ -1,24 +1,7 @@
-# README
+# Debt Tracking App built with Ruby on Rails MVC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demo Video Link: https://drive.google.com/file/d/1KS3VDkYABXw0PC6ESJuhM_rhwMZqHEWb/view?usp=sharing
 
-Things you may want to cover:
+This is an app that was built using Ruby on Rails (Rails version 7.0.8) and utilizes boostrap in the templates for styling. 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The app is a debt tracking system that could be used by a bank to track outstanding commercial loans. It enables you to create business entities by providing a name, naics code, and contact email. Once an entity is created, you can one or loans to their profile. The loan information you enter includes the principal, interest, loan term, payment frequency, and start date. You can view the outstanding loans for an entity within their profile, and you can also view the loan details. On the loan details page, there is also an amortization schedule which displays the monthly payments and the interest/principal balances throughout the life of the loan
