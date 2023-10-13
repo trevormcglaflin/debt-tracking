@@ -1,6 +1,6 @@
 # Debt Tracking App built with Ruby on Rails MVC
 
-Demo Video Link: https://drive.google.com/file/d/1KS3VDkYABXw0PC6ESJuhM_rhwMZqHEWb/view?usp=sharing
+Demo Video Link: https://drive.google.com/file/d/1vlncjHRCKFFiLiyLF3SgY0EOVV7yUhUD/view?usp=sharing
 
 This is an app that was built using Ruby on Rails (Rails version 7.0.8) and utilizes boostrap in the templates for styling. 
 
