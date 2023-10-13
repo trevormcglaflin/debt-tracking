@@ -23,6 +23,16 @@ class LoansController < ApplicationController
       @loan.payment_frequency,
       @loan.start_date.strftime("%Y-%m-%d")
     )
+
+    @monthly_payment = @amortization_schedule.schedule[1][:payment]
+    @principal_payments = {}
+    @interest_payments = {}
+    @amortization_schedule.schedule.each_with_index do |row, index|
+      if index > 0
+        @principal_payments[row[:date]] = row[:principal_payment_num]
+        @interest_payments[row[:date]] = row[:interest_payment_num]
+      end
+    end
   end
 
   private

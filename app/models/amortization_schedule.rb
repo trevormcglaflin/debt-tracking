@@ -41,8 +41,11 @@ class LoanAmortization
       period: 0,
       date: @start_date,
       payment: "-",
+      payment_num: 0,
       principal_payment: "-",
       interest_payment: "-",
+      principal_payment_num: 0,
+      interest_payment_num: 0,
       remaining_balance: sprintf("$%.2f", @principal)
     }
 
@@ -56,8 +59,11 @@ class LoanAmortization
         period: period + 1,
         date: @start_date >> ((period + 1) * payment_frequency_in_months),
         payment: sprintf("$%.2f", payment),
+        payment_num: payment,
         principal_payment: sprintf("$%.2f", principal_payment),
         interest_payment: sprintf("$%.2f", interest_payment),
+        principal_payment_num: principal_payment,
+        interest_payment_num: interest_payment,
         remaining_balance: sprintf("$%.2f", remaining_balance)
       }
     end

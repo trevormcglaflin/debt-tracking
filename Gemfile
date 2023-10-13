@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 
 gem 'bootstrap', '~> 5.0.0'
+gem "chartkick"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

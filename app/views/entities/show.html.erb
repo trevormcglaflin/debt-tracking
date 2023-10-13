@@ -13,6 +13,48 @@
     </div>
   </div>
   <div class="row">
+    <div class="col col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"># of Loans</h5>
+          <p class="card-text"><%= @entity.loans.size %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Principal</h5>
+          <p><strong>Total:</strong> <%= @total_principal %></p>
+          <p><strong>Due Next 12 Months:</strong> <%= @total_principal_due_next_12_months %></p>
+          <p><strong>Previously Paid:</strong> <%= @total_principal_previously_due %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Interest</h5>
+          <p><strong>Total:</strong> <%= @total_interest %></p>
+          <p><strong>Due Next 12 Months:</strong> <%= @total_interest_due_next_12_months %></p>
+          <p><strong>Previously Paid:</strong> <%= @total_interest_previously_due %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <h3>Cash Flow (12 month horizon)</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-12">
+      <%= column_chart [
+        {name: "Cash Flow", data: @cash_flow_map},
+      ] %>
+    </div>
+  </div>
+  <div class="row">
     <div class="col col-10">
       <h3>Loans for Entity</h3>
     </div>
